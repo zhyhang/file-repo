@@ -24,9 +24,9 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        # for h2 database, because erupt use h2 reserved words as column.
-        globally_quoted_identifiers: true
+#    properties:
+#      hibernate:
+#        # for h2 2.x.x database, because erupt use h2 reserved words as column.
+#        globally_quoted_identifiers: true
     init:
       platform: h2
