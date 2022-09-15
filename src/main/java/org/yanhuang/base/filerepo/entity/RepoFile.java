@@ -2,6 +2,7 @@ package org.yanhuang.base.filerepo.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.yanhuang.base.filerepo.config.Consts;
 import xyz.erupt.annotation.Erupt;
 import xyz.erupt.annotation.EruptField;
 import xyz.erupt.annotation.sub_erupt.LinkTree;
@@ -10,6 +11,7 @@ import xyz.erupt.annotation.sub_field.EditType;
 import xyz.erupt.annotation.sub_field.Readonly;
 import xyz.erupt.annotation.sub_field.View;
 import xyz.erupt.annotation.sub_field.sub_edit.ReferenceTreeType;
+import xyz.erupt.core.annotation.EruptDataProcessor;
 import xyz.erupt.jpa.model.BaseModel;
 
 import javax.persistence.Entity;
@@ -27,6 +29,7 @@ import java.time.LocalDateTime;
 		orderBy = "RepoFile.name",
 		linkTree = @LinkTree(field = "directory") //field 的值为类中支持树组件字段
 )
+@EruptDataProcessor(Consts.DATA_SERVICE_NAME)
 @Getter
 @Setter
 public class RepoFile extends BaseModel {
