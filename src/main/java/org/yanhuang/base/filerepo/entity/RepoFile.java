@@ -76,7 +76,7 @@ public class RepoFile {
 	private RepoDirectory directory;
 
 	@EruptField(
-			views = @View(title = "类型", sortable = true),
+			views = @View(title = "类型", sortable = true,  template = "var iconMap = { file: 'file', directory: 'folder' }; function getIcon(valueLabel) { return '<a href=\"javascript:void(0)\"><i class=\"fa fa-'+iconMap[valueLabel]+'\"><i/></a>' }; getIcon(value);"),
 			edit = @Edit(title = "类型", readonly = @Readonly(add = false, edit = false), notNull = true)
 	)
 	private Consts.FileType fileType;
